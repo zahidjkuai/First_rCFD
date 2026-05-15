@@ -45,6 +45,8 @@ is provided in ./reference
     - two new files *LidDrivenCavity_2D_END_CFD_RUN.cas/dat.h5* will be stored into ./ansys_fluent
 
 - post-process the CFD mixing simulation by running the Matlab code **./post/CFD_reference.m** 
+You will get the center of gravity like this:
+<img width="1015" height="420" alt="CFD_CoG" src="https://github.com/user-attachments/assets/ba21e9a0-3ea8-4fc9-915a-9dac470ec322" />
 
 - close **Ansys/fluent**
 - for comparison purposes, sample output (i.e. CFD_mix_ind.out, CFD_CoG.out,
