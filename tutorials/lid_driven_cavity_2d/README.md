@@ -89,8 +89,6 @@ which significantly accelerates the subsequent rCFD simulations
     - rCFD code will be compiled into ./libudf_rcfd_run
     - rCFD_run.trn transcript will be stored into                             ./post/rCFD
     - for post_on = 1, animation snap-shots will be stored into               ./post/rCFD  (200 files),  
-      example snapshot for time-step 10...  
-    ![rCFD_mix_snap](./reference/rCFD_mix_0010.jpg)
     - ANSYS/fluent transcript file *fluent_#data_#_#.trn* will be stored into ./post/rCFD
     - rCFD_balance.out will be stored into                                    ./post/rCFD
     - rCFD_mix_ind.out will be stored into                                    ./post/rCFD
@@ -102,8 +100,8 @@ which significantly accelerates the subsequent rCFD simulations
     - you should get figures like this ...  
 <table>
   <tr>
-    <td><img width="1200" height="640" alt="rCFD_mix_topright_0026" src="https://github.com/user-attachments/assets/4760748d-a792-4448-a835-efb094337ca2" /></td>
-    <td><img width="1200" height="640" alt="rCFD_mix_topright_0000" src="https://github.com/user-attachments/assets/8ef4378c-d689-4618-b056-216da5b52776" /></td>
+    <td><img width="1200" height="640" alt="rCFD_mix_topright_0000" src="https://github.com/user-attachments/assets/8ef4378c-d689-4618-b056-216da5b52776" /></td>  
+    <td><img width="1200" height="640" alt="rCFD_mix_topright_0026" src="https://github.com/user-attachments/assets/4760748d-a792-4448-a835-efb094337ca2" /></td>    
   </tr>
 </table>
 
