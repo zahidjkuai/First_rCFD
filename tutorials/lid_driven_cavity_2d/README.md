@@ -1,6 +1,6 @@
 # Lid Driven Cavity 2D Tutorial
-Original: (tested with ANSYS Fluent 2023 R2 and rCFD develop 26.03 on Linux)
-Thesis: Modified for using in Windows (By Md Zahid Hasan) (Tested with ANSYS Fluent 2021 R2)
+- Original: (tested with ANSYS Fluent 2023 R2 and rCFD develop 26.03 on Linux)
+- Thesis: Modified for using in Windows (By Md Zahid Hasan) (Tested with ANSYS Fluent 2021 R2)
 ## Contents
 
 1. Spin-up CFD simulation until flow reaches pseudo steady-state
