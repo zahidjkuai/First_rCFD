@@ -11,12 +11,12 @@
 
 ## 1. Spin-up CFD simulation
 
-- Press Windows Key <img width="225" height="225" alt="win" src="https://github.com/user-attachments/assets/91862f04-9e74-4402-9c9c-559ebe91cac2" />
+- Press Windows Key <img width="112" height="109" alt="win1" src="https://github.com/user-attachments/assets/2b0e3aff-1aa2-4207-a17d-e0f009be665f" />
 and type Fluent (i.e. Fluent 2021 R2) and You will get the Interface to select the working directory, Solver Process and GPU
 <img width="786" height="739" alt="Fluent_start" src="https://github.com/user-attachments/assets/32cd88ca-9bb3-48a3-ad13-bb004e51e05b" />
 
 
-- type into fluent console **(load "CFD_start.scm") (CFD_start)**
+- type into fluent console: **(load "CFD_start.scm") (CFD_start)**
 
     - CFD user code will be compiled into **./libudf_cfd**
     - spin-up monitor **CFD_start_energy.out** will be stored into ./post/CFD_start
