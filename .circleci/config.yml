@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    branches:
+      only:
+        - master
+        - develop
+
+    machine:
+      image: ubuntu-2404:2024.11.1
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install package dependencies
+          command: sudo apt-get update && sudo apt-get install -y cmake openmpi-bin libopenmpi-dev
+
+      - run:
+          name: Configure rCFD library build
+          command: mkdir -p build && cd build && cmake ../src/ -DUSE_MPI=ON
+
+      - run:
+          name: Build rCFD library
+          command: cd build && make
+          no_output_timeout: 5m

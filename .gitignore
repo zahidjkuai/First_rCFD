@@ -1,0 +1,22 @@
+# ignore project files needed for qt-creator 
+# (Info: use eg !dummy.config for specific files if you don't want to ignore them)
+*.cflags
+*.config
+*.creator
+*.creator.user
+*.cxxflags
+*.files
+*.includes
+*.so
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
