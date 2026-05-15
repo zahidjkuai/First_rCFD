@@ -35,9 +35,8 @@ is provided in ./reference
 
 ## 2. Run CFD reference simulation (optional)
 
-- start Ansys/fluent e.g. by **fluent 3ddp -t2 &** from this folder (with -t2 indicating the number of compute nodes)
-- from the file menu read the scheme file **cfd_run.scm**
-- type into fluent console (cfd_1), followed by (cfd_2), ..., (cfd_7); or simply **(cfd_run)**
+- start Ansys/fluent in the same way of  **1. Spin-up CFD simulation**
+- type into fluent console: **(load "CFD_run.scm") (CFD_run)**
 
     - mixing indices *CFD_mix_ind.out* will be stored into             ./post/CFD
     - center of gravity coordinates *CFD_CoG.out* will be stored into  ./post/CFD
@@ -47,11 +46,7 @@ is provided in ./reference
     - ANSYS/fluent transcript file *fluent_#data_#_#.trn* will be stored into ./post/CFD
     - two new files *LidDrivenCavity_2D_END_CFD_RUN.cas/dat.h5* will be stored into ./ansys_fluent
 
-- post-process the CFD mixing simulation by running the Matlab code **./post/CFD_reference.m**
-
-    - you should get two figures like this ...  
-    ![CFD_CoG](./reference/CFD_CoG.jpg)  
-    ![CFD_mix](./reference/CFD_mix_ind.jpg)  
+- post-process the CFD mixing simulation by running the Matlab code **./post/CFD_reference.m** 
 
 - close **Ansys/fluent**
 - for comparison purposes, sample output (i.e. CFD_mix_ind.out, CFD_CoG.out,
@@ -96,6 +91,8 @@ which significantly accelerates the subsequent rCFD simulations
 ## 🧪 Test: Scalar diffusion with a circle at the top‑right corner
 
 > Create a new file inside `user_src` named `rCFD_user_run_topright.h`  (`rCFD_user_run.h` contains the scalar shape and position details to predict)
+> start Ansys/fluent in the same way of **3. Create rCFD database**
+> type into fluent console: **(load "rCFD_run_topright.scm") (rCFD_run)**
 > and define the circle as scalar 1 using these parameters:
 
 1.  Create the header file and define the parameters:
