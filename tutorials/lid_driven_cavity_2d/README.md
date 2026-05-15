@@ -109,6 +109,13 @@ which significantly accelerates the subsequent rCFD simulations
 - for comparison purposes, sample output (i.e. rCFD_mix_ind.out, rCFD_mix_ind.jpg,
  rCFD_CoG.out, rCFD_CoG.jpg, rCFD_balance.out as well as one snap-shot rCFD_mix_0010.jpg) 
 is provided in ./reference
+<table>
+  <tr>
+    <td><img width="1000" height="600" alt="mixing_index" src="https://github.com/user-attachments/assets/6d5e0d3e-5e45-4ec4-92ae-dd34d10f8859" /></td>
+    <td><img width="1400" height="600" alt="cog_plot" src="https://github.com/user-attachments/assets/1e57d381-a556-4fdc-9f4e-e5c4206dbb67" /></td>
+  </tr>
+</table>
+
 
 ## License
 
