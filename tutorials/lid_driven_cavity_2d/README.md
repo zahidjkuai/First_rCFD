@@ -82,10 +82,8 @@ is provided in ./reference
 
 - (optional) edit the file **rcfd_run.scm** and set (define post_on 0) - in that case no graphical output will be produced, 
 which significantly accelerates the subsequent rCFD simulations
-- start Ansys/fluent e.g. by **fluent 3ddp -t2 &** from this folder (you must use the same number of nodes as for creating the database)
-- from the file menu read the scheme **rcfd_run.scm**
-- type into fluent console (rcfd_r1), followed by (rcfd_r2), ..., (rcfd_r8); or simply **(rcfd_run)**
-
+- start Ansys/fluent in the same way of **3. Create rCFD database** (you must use the same number of nodes as for creating the database)
+- type into fluent console: **(load "rCFD_run.scm") (rCFD_run)** (To run the given Scalar Diffusion)
     - rCFD code will be compiled into ./libudf_rcfd_run
     - rCFD_run.trn transcript will be stored into                             ./post/rCFD
     - for post_on = 1, animation snap-shots will be stored into               ./post/rCFD  (200 files),  
@@ -94,6 +92,21 @@ which significantly accelerates the subsequent rCFD simulations
     - rCFD_mix_ind.out will be stored into                                    ./post/rCFD
     - rCFD_CoG.out will be stored into                                        ./post/rCFD
     - two new files *LidDrivenCavity_2D_END_rCFD_RUN.cas/dat.h5* will be stored into ./ansys_fluent
+
+## 🧪 Test: Scalar diffusion with a circle at the top‑right corner
+
+> Create a new file inside `user_src` named `rCFD_user_run_topright.h`  (`rCFD_user_run.h` contains the scalar shape and position details to predict)
+> and define the circle as scalar 1 using these parameters:
+
+```c
+/******************************************************************************
+ * circle injection parameters  --  top-right corner of 0.065 x 0.065 domain
+ *****************************************************************************/
+
+#define CX  0.065   /* circle centre x [m] */
+#define CY  0.065   /* circle centre y [m] */
+#define CR  0.005   /* circle radius   [m] */
+#define CZ  0.002   /* max depth z     [m] */
 
 - post-process the rCFD gas dissolution simulation by running the Matlab code **./post/rCFD_post.m**
 
