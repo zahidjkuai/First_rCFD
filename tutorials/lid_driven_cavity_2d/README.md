@@ -60,9 +60,9 @@ is provided in ./reference
 
 ## 3. Create rCFD database
 
-- start Ansys/fluent e.g. by **fluent 3ddp -t2 &** from this folder (with -t2 indicating the number of compute nodes)
-- from the file menu read the scheme **rcfd_prep.scm**
-- type into fluent console (rcfd_p1), followed by (rcfd_p2), ..., (rcfd_p9); or simply **(rcfd_prep)**
+- start Ansys/fluent in the same way but **do not use GPU this time** <img width="786" height="738" alt="fs2" src="https://github.com/user-attachments/assets/741b69ce-78ba-46bb-8121-c709f3117632" />
+
+- type into fluent console: **(load "rCFD_prep.scm") (rCFD_prep)**
 
     - rCFD code will be compiled into ./libudf_rcfd_prep
     - cell-to-cell shifts will be stored into    ./data/C2C        (2 files, i.e.one file for each node)
@@ -100,8 +100,12 @@ which significantly accelerates the subsequent rCFD simulations
 - post-process the rCFD gas dissolution simulation by running the Matlab code **./post/rCFD_post.m**
 
     - you should get figures like this ...  
-    ![rCFD_CoG](./reference/rCFD_CoG.jpg)  
-    ![rCFD_mix](./reference/rCFD_mix_ind.jpg)  
+<table>
+  <tr>
+    <td><img width="1200" height="640" alt="rCFD_mix_topright_0026" src="https://github.com/user-attachments/assets/4760748d-a792-4448-a835-efb094337ca2" /></td>
+    <td><img width="1200" height="640" alt="rCFD_mix_topright_0000" src="https://github.com/user-attachments/assets/8ef4378c-d689-4618-b056-216da5b52776" /></td>
+  </tr>
+</table>
 
 - close **Ansys/fluent**
 - for comparison purposes, sample output (i.e. rCFD_mix_ind.out, rCFD_mix_ind.jpg,
