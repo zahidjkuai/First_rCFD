@@ -45,7 +45,6 @@ is provided in ./reference
     - two new files *LidDrivenCavity_2D_END_CFD_RUN.cas/dat.h5* will be stored into ./ansys_fluent
 
 - post-process the CFD mixing simulation by running the Matlab code **./post/CFD_reference.m** 
-- <img width="3555" height="1920" alt="cog_plot" src="https://github.com/user-attachments/assets/25b10a7e-8095-45ff-8ecb-808d06e67c66" />
 You will get the center of gravity like this:
 <img width="1015" height="420" alt="CFD_CoG" src="https://github.com/user-attachments/assets/ba21e9a0-3ea8-4fc9-915a-9dac470ec322" />
 
@@ -124,8 +123,8 @@ which significantly accelerates the subsequent rCFD simulations
 
     <table>
       <tr>
-        <td><img width="1000" height="600" alt="mixing_index" src="https://github.com/user-attachments/assets/6d5e0d3e-5e45-4ec4-92ae-dd34d10f8859" /></td>
-        <td><img width="1400" height="600" alt="cog_plot" src="https://github.com/user-attachments/assets/1e57d381-a556-4fdc-9f4e-e5c4206dbb67" /></td>
+        <td><img width="3555" height="1920" alt="cog_plot" src="https://github.com/user-attachments/assets/43645e8d-1055-451b-86ea-c5adc14abbfe" /></td>
+        <td><img width="2663" height="1761" alt="mixing_index" src="https://github.com/user-attachments/assets/e3f9538d-a6fd-46bc-adf7-eca393bbacff" /></td>
       </tr>
     </table>
 
