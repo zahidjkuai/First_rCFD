@@ -11,9 +11,12 @@
 
 ## 1. Spin-up CFD simulation
 
-- start Ansys/fluent e.g. by **fluent 3ddp -t2 &** from this folder (with -t2 indicating the number of compute nodes)
-- from the file menu read the scheme **cfd_start.scm**
-- type into fluent console (cfd_1), followed by (cfd_2), ..., (cfd_7); or simply **(cfd_start)**
+- Press Windows Key <img width="225" height="225" alt="win" src="https://github.com/user-attachments/assets/91862f04-9e74-4402-9c9c-559ebe91cac2" />
+and type Fluent (i.e. Fluent 2021 R2) and You will get the Interface to select the working directory, Solver Process and GPU
+<img width="786" height="739" alt="Fluent_start" src="https://github.com/user-attachments/assets/32cd88ca-9bb3-48a3-ad13-bb004e51e05b" />
+
+
+- type into fluent console **(load "CFD_start.scm") (CFD_start)**
 
     - CFD user code will be compiled into **./libudf_cfd**
     - spin-up monitor **CFD_start_energy.out** will be stored into ./post/CFD_start
