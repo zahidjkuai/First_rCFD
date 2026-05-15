@@ -41,8 +41,6 @@ is provided in ./reference
     - mixing indices *CFD_mix_ind.out* will be stored into             ./post/CFD
     - center of gravity coordinates *CFD_CoG.out* will be stored into  ./post/CFD
     - animation snap-shots will be stored into                         ./post/CFD (200 files),  
-      example snapshot for time-step 10...  
-    ![CFD_mix_snap](./reference/CFD_mix_0010.jpg)
     - ANSYS/fluent transcript file *fluent_#data_#_#.trn* will be stored into ./post/CFD
     - two new files *LidDrivenCavity_2D_END_CFD_RUN.cas/dat.h5* will be stored into ./ansys_fluent
 
