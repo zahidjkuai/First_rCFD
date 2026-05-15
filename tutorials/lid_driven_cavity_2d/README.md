@@ -98,36 +98,38 @@ which significantly accelerates the subsequent rCFD simulations
 > Create a new file inside `user_src` named `rCFD_user_run_topright.h`  (`rCFD_user_run.h` contains the scalar shape and position details to predict)
 > and define the circle as scalar 1 using these parameters:
 
-```c
-/******************************************************************************
- * circle injection parameters  --  top-right corner of 0.065 x 0.065 domain
- *****************************************************************************/
+1.  Create the header file and define the parameters:
+    
+        /******************************************************************************
+         * circle injection parameters  --  top-right corner of 0.065 x 0.065 domain
+         *****************************************************************************/
+        
+        #define CX  0.065   /* circle centre x [m] */
+        #define CY  0.065   /* circle centre y [m] */
+        #define CR  0.005   /* circle radius   [m] */
+        #define CZ  0.002   /* max depth z     [m] */
 
-#define CX  0.065   /* circle centre x [m] */
-#define CY  0.065   /* circle centre y [m] */
-#define CR  0.005   /* circle radius   [m] */
-#define CZ  0.002   /* max depth z     [m] */
+2.  **Post-process** the rCFD gas dissolution simulation by running the Matlab code `./post/rCFD_post.m`.
 
-- post-process the rCFD gas dissolution simulation by running the Matlab code **./post/rCFD_post.m**
+    - You should get figures like this:
 
-    - you should get figures like this ...  
-<table>
-  <tr>
-    <td><img width="1200" height="640" alt="rCFD_mix_topright_0000" src="https://github.com/user-attachments/assets/8ef4378c-d689-4618-b056-216da5b52776" /></td>  
-    <td><img width="1200" height="640" alt="rCFD_mix_topright_0026" src="https://github.com/user-attachments/assets/4760748d-a792-4448-a835-efb094337ca2" /></td>    
-  </tr>
-</table>
+        <table>
+          <tr>
+            <td><img width="1200" height="640" alt="rCFD_mix_topright_0000" src="https://github.com/user-attachments/assets/8ef4378c-d689-4618-b056-216da5b52776" /></td>  
+            <td><img width="1200" height="640" alt="rCFD_mix_topright_0026" src="https://github.com/user-attachments/assets/4760748d-a792-4448-a835-efb094337ca2" /></td>    
+          </tr>
+        </table>
 
-- close **Ansys/fluent**
-- for comparison purposes, sample output (i.e. rCFD_mix_ind.out, rCFD_mix_ind.jpg,
- rCFD_CoG.out, rCFD_CoG.jpg, rCFD_balance.out as well as one snap-shot rCFD_mix_0010.jpg) 
-is provided in ./reference
-<table>
-  <tr>
-    <td><img width="1000" height="600" alt="mixing_index" src="https://github.com/user-attachments/assets/6d5e0d3e-5e45-4ec4-92ae-dd34d10f8859" /></td>
-    <td><img width="1400" height="600" alt="cog_plot" src="https://github.com/user-attachments/assets/1e57d381-a556-4fdc-9f4e-e5c4206dbb67" /></td>
-  </tr>
-</table>
+3.  **Close** Ansys/Fluent.
+
+4.  For **comparison purposes**, sample output (i.e. `rCFD_mix_ind.out`, `rCFD_mix_ind.jpg`, `rCFD_CoG.out`, `rCFD_CoG.jpg`, `rCFD_balance.out` as well as one snapshot `rCFD_mix_0010.jpg`) is provided in `./reference`.
+
+    <table>
+      <tr>
+        <td><img width="1000" height="600" alt="mixing_index" src="https://github.com/user-attachments/assets/6d5e0d3e-5e45-4ec4-92ae-dd34d10f8859" /></td>
+        <td><img width="1400" height="600" alt="cog_plot" src="https://github.com/user-attachments/assets/1e57d381-a556-4fdc-9f4e-e5c4206dbb67" /></td>
+      </tr>
+    </table>
 
 
 ## License
