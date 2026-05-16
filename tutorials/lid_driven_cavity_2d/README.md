@@ -138,7 +138,7 @@ which significantly accelerates the subsequent rCFD simulations
       </tr>
     </table>
 
-[https://github.com/user-attachments/assets/7e69f84e-a0d4-4803-9b88-56af217def43](https://youtu.be/G8FhZ6GOaSc?si=5Z1XM8mu4s7g0zuM)
+https://youtu.be/G8FhZ6GOaSc?si=WT2knmjK1Q1CrBTj
 
 
 
