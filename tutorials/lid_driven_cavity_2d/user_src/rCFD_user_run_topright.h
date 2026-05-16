@@ -79,10 +79,10 @@ void user_set_data_dict(void *handle)
 {
 #if RP_NODE
     rcfd_set_dict_property_s(handle, "Data_Dict", -1, WATER, MIX1, "type", "concentration");
-    rcfd_set_dict_property_r(handle, "Data_Dict", -1, WATER, MIX1, "face_swap_diffusion", 0.0001);
+    rcfd_set_dict_property_r(handle, "Data_Dict", -1, WATER, MIX1, "face_swap_diffusion", 0.00001);
 
     rcfd_set_dict_property_s(handle, "Data_Dict", -1, WATER, MIX2, "type", "concentration");
-    rcfd_set_dict_property_r(handle, "Data_Dict", -1, WATER, MIX2, "face_swap_diffusion", 0.4);
+    rcfd_set_dict_property_r(handle, "Data_Dict", -1, WATER, MIX2, "face_swap_diffusion", 0.03);
 #endif
 }
 
