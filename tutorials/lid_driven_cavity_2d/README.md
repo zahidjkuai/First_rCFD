@@ -90,10 +90,10 @@ which significantly accelerates the subsequent rCFD simulations
 
 ## 🧪 Test: Scalar diffusion with a circle at the top‑right corner
 
-> Create a new file inside `user_src` named `rCFD_user_run_topright.h`  (`rCFD_user_run.h` contains the scalar shape and position details to predict)
-> start Ansys/fluent in the same way of **3. Create rCFD database**
-> type into fluent console: **(load "rCFD_run_topright.scm") (rCFD_run)**
-> and define the circle as scalar 1 using these parameters:
+- Create a new file inside `user_src` named `rCFD_user_run_topright.h`  (`rCFD_user_run.h`) contains the scalar shape and position details to predict)
+- start Ansys/fluent in the same way of **3. Create rCFD database**
+- type into fluent console: **(load "rCFD_run_topright.scm") (rCFD_run)**
+- and define the circle as scalar 1 using these parameters:
 
 1.  Create the header file and define the parameters:
     
