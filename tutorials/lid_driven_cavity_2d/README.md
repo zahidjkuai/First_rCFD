@@ -138,7 +138,7 @@ which significantly accelerates the subsequent rCFD simulations
       </tr>
     </table>
 
-https://youtu.be/G8FhZ6GOaSc?si=WT2knmjK1Q1CrBTj
+[<img src="https://img.youtube.com/vi/G8FhZ6GOaSc/maxresdefault.jpg" alt="rCFD Prediction in Lid Driven Cavity" width="100%">](https://www.youtube.com/watch?v=G8FhZ6GOaSc)
 
 
 
