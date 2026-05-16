@@ -123,8 +123,8 @@ which significantly accelerates the subsequent rCFD simulations
 
     <table>
       <tr>
-        <td><img width="3555" height="1920" alt="cog_plot" src="https://github.com/user-attachments/assets/43645e8d-1055-451b-86ea-c5adc14abbfe" /></td>
-        <td><img width="2663" height="1761" alt="mixing_index" src="https://github.com/user-attachments/assets/e3f9538d-a6fd-46bc-adf7-eca393bbacff" /></td>
+        <td><img width="3145" height="1692" alt="diffusivity_comparison" src="https://github.com/user-attachments/assets/8ce21299-ba77-492c-83ac-1f134f7f0cc3" /></td>
+        <td><img width="2664" height="1614" alt="mixing_index_comparison" src="https://github.com/user-attachments/assets/b1db008a-def3-495e-a310-7bb2b8c6158f" /></td>
       </tr>
     </table>
 
