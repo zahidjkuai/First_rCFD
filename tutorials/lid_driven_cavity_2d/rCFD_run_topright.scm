@@ -1,5 +1,6 @@
 ;; (C) 2026
-;; Case for Testing and Prediction
+;; Case for Testing and Prediction with automatic plotting and animation
+;; Md Zahid Hasan
 ;; Particulate Flow Modelling
 ;; Johannes Kepler University, Linz, Austria
 ;; www.particulate-flow.at
@@ -7,14 +8,15 @@
 ;; rCFD_run_topright.scm
 ;; Circular scalar injection at top-right corner
 ;; CX=0.025, CY=0.025, CR=0.005, CZ=0.005
-;; Results saved to post\rCFD_topright  (all other folders untouched)
+;; Results saved to post\rCFD_topright
 
 (define ANSYS_Fluent_dir        ".\\\\ansys_fluent")
-(define ANSYS_Fluent_file       "LidDrivenCavity_2D")   ; w/o _START
+(define ANSYS_Fluent_file       "LidDrivenCavity_2D")
 (define rCFD_src_dir            "..\\\\..\\\\src")
 (define rCFD_third_party_dir    "..\\\\..\\\\third-party")
 (define rCFD_user_src_dir       ".\\\\user_src")
 (define rCFD_post_dir           ".\\\\post\\\\rCFD_topright")
+(define python_exe              "C:\\\\Users\\\\zahid\\\\rcfd_env\\\\Scripts\\\\python.exe")
 (define number_of_rCFD_episodes 200)
 (define i 0)
 (define img-1 "rCFD_mix_topright_")
@@ -30,7 +32,8 @@
     (if (= post_on 1) (rCFD_r5_post) (rCFD_r5))
     (rCFD_r6)
     (rCFD_r7)
-    (rCFD_r8)
+    (rCFD_r8)   ;; moves .jpg .out .trn to post folder FIRST
+    (rCFD_r9)   ;; then runs python FROM INSIDE post folder
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -48,9 +51,7 @@
     (ti-menu-load-string (format #f "!copy ~a\\\\tomlc17\\\\*.c ." rCFD_third_party_dir))
     (ti-menu-load-string (format #f "!copy ~a\\\\tomlc17\\\\*.h ." rCFD_third_party_dir))
 
-    ;; copy the top-right header and rename it so the compiler picks it up
     (ti-menu-load-string (format #f "!copy ~a\\\\rCFD_user_run_topright.h .\\\\rCFD_user_run.h" rCFD_user_src_dir))
-
     (ti-menu-load-string "!move rCFD_user_run.h rCFD_user.h")
 )
 
@@ -108,7 +109,7 @@
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define (rCFD_r5_post)  ;; run simulation with post-processing
+(define (rCFD_r5_post)  ;; run simulation with JPEG post per episode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
     (ti-menu-load-string "/display/open-window 1")
@@ -116,7 +117,6 @@
 
     (ti-menu-load-string "/display/set/picture/driver jpeg")
     (ti-menu-load-string "/display/set/picture/color-mode color")
-    (ti-menu-load-string "/display/set/picture/invert-background? no")
     (ti-menu-load-string "/display/set/picture/invert-background? no")
     (ti-menu-load-string "/display/set/picture/use-window-resolution? no")
     (ti-menu-load-string "/display/set/picture/x-resolution 1200")
@@ -208,24 +208,42 @@
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define (rCFD_r8)       ;; clean-up folder
+(define (rCFD_r8)       ;; move all results to post folder
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
     (ti-menu-load-string "!mkdir post")
-
     (ti-menu-load-string (format #f "!mkdir ~a" rCFD_post_dir))
 
+    ;; move simulation outputs to post folder
     (ti-menu-load-string (format #f "!move *.jpg ~a" rCFD_post_dir))
     (ti-menu-load-string (format #f "!move *.trn ~a" rCFD_post_dir))
     (ti-menu-load-string (format #f "!move *.out ~a" rCFD_post_dir))
 
     (ti-menu-load-string "!move *.h5 .\\\\ansys_fluent\\\\")
 
+    ;; clean source files
     (ti-menu-load-string "!del *.c")
     (ti-menu-load-string "!del *.h")
-    (ti-menu-load-string "!del *.h5")
-    (ti-menu-load-string "!del *.tiff")
-    (ti-menu-load-string "!del *.tif")
-    (ti-menu-load-string "!del fluent*")
-    (ti-menu-load-string "!del log")
+    (ti-menu-load-string "!del *.h5 2>nul")
+    (ti-menu-load-string "!del fluent* 2>nul")
+    (ti-menu-load-string "!del log 2>nul")
+    ;; tiff/tif skipped -- Fluent holds lock during session
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define (rCFD_r9)       ;; auto post: plots + MP4  (runs AFTER rCFD_r8)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+    ;; copy python scripts + batch file into post folder
+    (ti-menu-load-string (format #f "!copy ~a\\\\plot_CoG.py       ~a\\\\" rCFD_user_src_dir rCFD_post_dir))
+    (ti-menu-load-string (format #f "!copy ~a\\\\plot_mix_ind.py   ~a\\\\" rCFD_user_src_dir rCFD_post_dir))
+    (ti-menu-load-string (format #f "!copy ~a\\\\make_animation.py ~a\\\\" rCFD_user_src_dir rCFD_post_dir))
+    (ti-menu-load-string (format #f "!copy ~a\\\\run_post.bat      ~a\\\\" rCFD_user_src_dir rCFD_post_dir))
+
+    ;; run bat -- only pass img prefix as arg
+    ;; bat uses %~dp0 (its own folder = post folder) as working dir
+    (ti-menu-load-string (format #f
+        "!cmd /c start /wait \"rCFD post\" ~a\\\\run_post.bat ~a"
+        rCFD_post_dir
+        img-1))
 )
