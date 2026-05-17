@@ -139,8 +139,7 @@ which significantly accelerates the subsequent rCFD simulations
       </tr>
     </table>
 
-<img width="800" height="426" alt="rcfd_toprightgif" src="https://github.com/user-attachments/assets/9a9f508a-7654-4020-9719-eb1c06a3757d" />
-
+<img width="800" height="666" alt="rcfd_topright_1" src="https://github.com/user-attachments/assets/ddf1c211-7888-4ae8-b3bf-db57508183a1" />
 
 
 
