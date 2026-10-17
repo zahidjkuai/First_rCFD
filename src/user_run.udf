@@ -1,8 +1,0 @@
-CSOURCES = rCFD_C2C_run.c rCFD_library.c
-HSOURCES = rCFD.h rCFD_balance.h rCFD_defaults.h rCFD_dict.h rCFD_dict_read_toml.h \
-           rCFD_dict_write_toml.h rCFD_dump.h rCFD_fluent.h rCFD_free.h \
-           rCFD_globals.h rCFD_init.h rCFD_layer.h rCFD_library.h \
-           rCFD_macros.h rCFD_memory.h rCFD_parallel.h rCFD_post.h rCFD_prepare.h \
-           rCFD_report.h rCFD_run.h rCFD_shift.h rCFD_swap.h rCFD_topo.h rCFD_types.h \
-           rCFD_user.h rCFD_user_defaults.h rCFD_utilities.h
-FLUENT_INC=/software/ansys_inc/v211/fluent
