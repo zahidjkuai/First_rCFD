@@ -1,7 +1,0 @@
-*.log
-*.trn
-*.autosave
-cleanup-*
-libudf_*/
-data/
-rec/
