@@ -145,9 +145,11 @@ which significantly accelerates the subsequent rCFD simulations
 
 ## 5. rCFD stages
 <img width="4488" height="2820" alt="fig13_rcfd_workflow_gray" src="https://github.com/user-attachments/assets/49d9f516-f96d-45dc-87da-0849eb5ba39d" />
+
 ## 6. Applications of rCFD in Mixing
 <img width="4488" height="3030" alt="rcfd_changing" src="https://github.com/user-attachments/assets/559565da-8a17-4061-8b0b-257dee61a569" />
 <img width="4488" height="2970" alt="fig14_flow_pattern_database_gray" src="https://github.com/user-attachments/assets/31a771f3-32f4-4f2b-8835-07c2eef14448" />
+
 ## 7. Advantages vs. Limitations of rCFD
 <img width="4488" height="2520" alt="fig18_rcfd_advantages_limitations_gray" src="https://github.com/user-attachments/assets/21abd8dd-4982-4a13-8120-ee3ba2cacd02" />
 
